@@ -1,0 +1,23 @@
+package com.example.mypackage;
+class NegativeAgeException extends Exception {
+   public NegativeAgeException(String msg){
+      super(msg);
+   }
+}
+
+class EmployeeTest {
+   static void  employeeAge(int age) throws NegativeAgeException{
+      if(age < 0)
+         throw new NegativeAgeException("Age can't be less than zero");
+      else
+         System.out.println("Input is valid!!");
+   }
+   public static void main(String[] args) {
+       try {
+            employeeAge(-2);
+       }
+       catch (NegativeAgeException e) {
+            e.printStackTrace();
+       }
+   }
+}
